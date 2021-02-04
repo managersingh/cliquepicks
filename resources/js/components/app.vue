@@ -6,6 +6,7 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Login</button>
             </div>
         </div>
+
         <!--MODAL START-->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -41,6 +42,7 @@
             </div>
             </div> 
         <!--MODAL END-->  
+        
     </div>
 </template>
 
