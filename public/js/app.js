@@ -60,6 +60,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -68,6 +91,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     console.log('Component mounted.');
+    $(".toggle-password").click(function () {
+      $(this).toggleClass("fa-eye fa-eye-slash");
+      var input = $($(this).attr("toggle"));
+
+      if (input.attr("type") == "password") {
+        input.attr("type", "text");
+      } else {
+        input.attr("type", "password");
+      }
+    });
   }
 });
 
@@ -110,7 +143,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.modal-header{\n    display:unset !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.modal-header{\n    display:unset !important;\n}\ninput.form-input {\n    border: none;\n    margin-left: 10px;\n    width: 100%;\n}\nh4.modal-title span {\n    font-size: 16px;\n}\nh4.modal-title { \n    line-height: 24px;\n}\nul.social-icon {\n    width: 100%;\n    display: flex;\n    padding: 10px;\n    list-style: none;\n}\nul.social-icon li {\n    width: 100%;\n    margin: 0 10px;    \n    padding: 3px;\n}\nli.bg_01 {\n    background: #3b5998;\n}\nli.bg_02 {\n    background: #fff;\n}\nli.bg_01 i{\n    color: #fff;\n}\n.modal_signup {\n    background: #e7ecff;\n    display: block;\n}\n.form-group p {\n    margin: 0;\n}\n.form-group .btn {\n    background: #04c2e6;\n    border: 1px solid #04c2e6;\n    border-radius: 0px;\n    width: 40%;\n    padding: 4px;\n}\nli.bg_02 i {\n    color: #3b5998;\n}\ninput:focus,button:focus {\n    outline: none !important;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -634,119 +667,140 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "modal fade",
-          attrs: {
-            id: "myModal",
-            tabindex: "-1",
-            role: "dialog",
-            "aria-labelledby": "myModalLabel"
-          }
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "modal-dialog", attrs: { role: "document" } },
-            [
-              _c("div", { staticClass: "modal-content" }, [
-                _c("div", { staticClass: "modal-header" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "close",
-                      attrs: {
-                        type: "button",
-                        "data-dismiss": "modal",
-                        "aria-label": "Close"
-                      }
-                    },
-                    [
-                      _c("span", { attrs: { "aria-hidden": "true" } }, [
-                        _vm._v("×")
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "h4",
-                    {
-                      staticClass: "modal-title",
-                      attrs: { id: "myModalLabel" }
-                    },
-                    [_vm._v("WELCOME BACK")]
-                  ),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Sign in to Clique Picks")])
-                ]),
+      _c("div", { staticClass: "modal fade", attrs: { id: "myModal" } }, [
+        _c("div", { staticClass: "modal-dialog modal-md" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c("h4", { staticClass: "modal-title" }, [
+                _vm._v("WELCOME BACK"),
+                _c("br"),
+                _c("span", [_vm._v("Sign into Clique Picks")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "modal-body" }, [
-                  _c("form", [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "exampleInputEmail1" } }, [
-                        _vm._v("Email")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "email",
-                          id: "exampleInputEmail1",
-                          "aria-describedby": "emailHelp",
-                          placeholder: "Enter email"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "exampleInputPassword1" } }, [
-                        _vm._v("Password")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "password",
-                          id: "exampleInputPassword1",
-                          placeholder: "Password"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group form-check" }, [
-                      _c("input", {
-                        staticClass: "form-check-input",
-                        attrs: { type: "checkbox", id: "exampleCheck1" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        {
-                          staticClass: "form-check-label",
-                          attrs: { for: "exampleCheck1" }
-                        },
-                        [_vm._v("Check me out")]
-                      )
-                    ]),
+                _c(
+                  "button",
+                  {
+                    staticClass: "close",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("×")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "modal_form" }, [
+                _c("form", { attrs: { id: "sgnup" } }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("EMAIL")]),
                     _vm._v(" "),
                     _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-primary",
-                        attrs: { type: "submit" }
-                      },
-                      [_vm._v("SIGN IN")]
+                      "div",
+                      { staticClass: "form-control d-flex align-items-center" },
+                      [
+                        _c("i", { staticClass: "fa fa-envelope" }),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-input",
+                          attrs: {
+                            type: "email",
+                            name: "",
+                            width: "100%",
+                            placeholder: "Enter email"
+                          }
+                        })
+                      ]
                     )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("PASSWORD")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-control d-flex align-items-center" },
+                      [
+                        _c("i", { staticClass: "fa fa-lock" }),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-input",
+                          attrs: {
+                            type: "password",
+                            id: "password-field",
+                            name: "",
+                            width: "100%",
+                            placeholder: "Enter password"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", {
+                          staticClass:
+                            "fa fa-fw fa-eye field-icon toggle-password",
+                          attrs: { toggle: "#password-field" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "d-flex align-items-center justify-content-between"
+                      },
+                      [
+                        _c("p", [
+                          _c(
+                            "a",
+                            {
+                              staticStyle: { color: "#000" },
+                              attrs: { href: "" }
+                            },
+                            [_vm._v("Forgot Password?")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("button", { staticClass: "btn btn-primary" }, [
+                          _vm._v("SIGN IN")
+                        ])
+                      ]
+                    )
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "modal-footer modal_signup text-center" },
+              [
+                _c("p", [_vm._v("or sign in with")]),
+                _vm._v(" "),
+                _c("ul", { staticClass: "social-icon" }, [
+                  _c("li", { staticClass: "bg_01" }, [
+                    _c("a", { attrs: { href: "" } }, [
+                      _c("i", { staticClass: "fab fa-facebook-f" })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "bg_02" }, [
+                    _c("a", { attrs: { href: "" } }, [
+                      _c("i", { staticClass: "fab fa-google" })
+                    ])
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "modal-footer" })
-              ])
-            ]
-          )
-        ]
-      )
+                _c("p", [
+                  _vm._v("Don't have an account? "),
+                  _c("a", { staticClass: "ancr-signup", attrs: { href: "" } }, [
+                    _vm._v("Sign Up")
+                  ])
+                ])
+              ]
+            )
+          ])
+        ])
+      ])
     ])
   }
 ]
